@@ -1,0 +1,44 @@
+{% extends 'home/home.html' %}
+{% block pageContent %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="card col-md-8">
+                <div class="card-header">
+                    <strong>Registro Usuario</strong>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data" id="userForm">{% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <div>
+                                    <label for="#">{{ form.username.label }}</label>
+                                    {{ form.username }}
+                                </div>
+                                <div>
+                                    <label for="#">{{ form.last_name.label }}</label>
+                                    {{ form.last_name }}
+                                </div>
+                                <div>
+                                    <label for="#">{{ form.first_name.label }}</label>
+                                    {{ form.first_name }}
+                                </div>
+                                <div>
+                                    <label for="#">{{ form.password.label }}</label>
+                                    {{ form.password }}
+                                </div>
+                                <div>
+                                    <label for="#">{{ form.email.label }}</label>
+                                    {{ form.email }}
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i>
+                                Enviar información
+                            </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}html>

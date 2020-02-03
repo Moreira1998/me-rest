@@ -1,0 +1,26 @@
+{% extends 'home/home.html' %}
+{% block pageContent %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="card col-md-8">
+                <div class="card-header">
+                    <strong>Confirmar</strong>
+                </div>
+                <div class="card-body">
+                    <h1>Eliminar Usuario</h1>
+                    <form method="post">{% csrf_token %}
+                        <p>Esta seguro que desea eliminar el usuario de "{{ object }}" ?</p>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-trash"></i>
+                            Eliminar
+                        </button>
+                        <a href="{% url 'staff:user_list' %}" class="btn btn-secondary">
+                            <i class="fas fa-times-circle"></i>
+                            Cancelar
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
